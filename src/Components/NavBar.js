@@ -12,6 +12,8 @@ const NavBar = () => {
     localStorage.removeItem('user', user)
   }
 
+  const userName = JSON.parse((localStorage.getItem("name")))
+
   return (
     <div className='w-full border bg-slate-200 flex items-center justify-center h-24'>
         <div className="md:container md:mx-auto flex items-center justify-between">
@@ -24,6 +26,8 @@ const NavBar = () => {
                     <NavLink to="/login" className={`px-4 cursor-pointer ${user && 'hidden'}`}>Login</NavLink>
                     <NavLink to="/signup" className={`px-4 cursor-pointer ${user && 'hidden'}`}>Signup</NavLink>
                 </ul>
+                
+                <p className='px-4 cursor-pointer'>{user && userName}</p>
             </div>
         </div>
     </div>

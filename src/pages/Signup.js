@@ -9,6 +9,7 @@ const Signup = () => {
   const [password, setPassword] = useState("")
 
   const {user, setUser} = useContext(authContext)
+  const history = useHistory()
 
   const handleNameChange = (e) => {
     e.preventDefault()
@@ -28,10 +29,11 @@ const Signup = () => {
     setEmail("")
     setName("")
     setPassword("")
-    localStorage.setItem('name', JSON.stringify(name))
+    localStorage.setItem("name", JSON.stringify(name))
     localStorage.setItem('email', JSON.stringify(email))
     localStorage.setItem('password', JSON.stringify(password))
-    // localStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(user))
+    history.push('/')
   }
   
   return (
