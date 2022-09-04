@@ -30,10 +30,15 @@ const Login = () => {
         alert("Invalid creds")
         } else {
             history.push('/')
+            
         setUser(true)
         }
         // console.log("hello")
     }
+
+    useEffect(() => {
+        console.log(user)
+    }, [user])
     
 
   return (
