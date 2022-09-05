@@ -9,6 +9,11 @@ const Login = () => {
     // const [data, setData] = useState({})
     const {user, setUser} = useContext(authContext)
 
+    useEffect(() => {
+        user === true &&
+        localStorage.setItem(JSON.stringify(user))
+    }, [user])
+
     const history = useHistory()
 
     // console.log(JSON.parse(localStorage.getItem("email")))
@@ -36,9 +41,6 @@ const Login = () => {
         // console.log("hello")
     }
 
-    useEffect(() => {
-        console.log(user)
-    }, [user])
     
 
   return (

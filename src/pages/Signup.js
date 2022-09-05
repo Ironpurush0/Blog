@@ -15,17 +15,18 @@ const Signup = () => {
     e.preventDefault()
     setName(e.target.value)
   }
+  
   const handleEmailChange = (e) => {
     e.preventDefault()
     setEmail(e.target.value)
   }
+
   const handlePasswordChange = (e) => {
     e.preventDefault()
     setPassword(e.target.value)
   }
 
   const handleSubmit = (e) => {
-    setUser(true)
     setEmail("")
     setName("")
     setPassword("")
@@ -33,11 +34,12 @@ const Signup = () => {
     localStorage.setItem('email', JSON.stringify(email))
     localStorage.setItem('password', JSON.stringify(password))
     history.push('/')
+    setUser(true)
   }
 
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(user))
-  }, [setUser, user])
+  }, [user])
 
 
   
